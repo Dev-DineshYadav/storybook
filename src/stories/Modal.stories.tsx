@@ -5,6 +5,7 @@ import Card from '@/components/Card';
 const meta: Meta<typeof Modal> = {
   title: 'Components/Modal',
   component: Modal,
+  tags: ['autodocs'],
   parameters: {
     layout: 'centered',
     viewport: {
