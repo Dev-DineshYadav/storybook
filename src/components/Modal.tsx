@@ -17,12 +17,16 @@ const Modal: React.FC<ModalProps> = ({ isOpen, title, content, onClose }) => {
 
     if (isOpen) {
       document.addEventListener('keydown', handleEsc);
-      document.body.style.overflow = 'hidden';
+      if (!document.querySelector('#storybook-docs')) {
+        document.body.style.overflow = 'hidden';
+      }
     }
 
     return () => {
       document.removeEventListener('keydown', handleEsc);
-      document.body.style.overflow = 'unset';
+      if (!document.querySelector('#storybook-docs')) {
+        document.body.style.overflow = 'unset';
+      }
     };
   }, [isOpen, onClose]);
 
