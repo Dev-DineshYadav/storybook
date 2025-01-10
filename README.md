@@ -88,8 +88,3 @@ npm run build-storybook
 ```
 
 This will create a static version of your Storybook in the `storybook-static` directory, which you can then deploy to a web server.
-
-```plaintext
-
-This README.md file provides a comprehensive overview of the Storybook project, including installation instructions, project structure, file usage, and commands for running and building the project.
-```
