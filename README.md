@@ -2,6 +2,8 @@
 
 This project contains a collection of reusable React components built with Storybook for the application.
 
+You can view the live Storybook here: [Live Storybook](https://storybook-fawn-ten.vercel.app)
+
 ## Table of Contents
 1. [Installation](#installation)
 2. [Project Structure](#project-structure)
