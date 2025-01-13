@@ -65,13 +65,15 @@ const Modal: React.FC<ModalProps> = ({ isOpen, title, content, onClose }) => {
           </button>
         </div>
         
-        <div className="p-4 md:px-6 md:py-4 overflow-y-auto">
+        <div className="p-4 md:px-6 md:py-4 overflow-y-auto flex flex-col items-center justify-center min-h-[100px]">
           {typeof content === 'string' ? (
-            <p className="text-sm text-gray-600 md:text-base lg:text-lg break-words whitespace-pre-wrap">
+            <p className="text-sm text-gray-600 md:text-base lg:text-lg break-words whitespace-pre-wrap text-center">
               {content}
             </p>
           ) : (
-            content
+            <div className="flex items-center justify-center w-full">
+              {content}
+            </div>
           )}
         </div>
       </div>
