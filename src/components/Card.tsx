@@ -23,10 +23,10 @@ const Card: React.FC<CardProps> = ({ title, description, image, onClick }) => {
         </div>
       )}
       <div className="p-4">
-        <h3 className="text-xl font-semibold text-gray-800 mb-2 line-clamp-2">
+        <h3 className="text-xl font-semibold text-gray-800 mb-2 line-clamp-2 break-words overflow-wrap-anywhere">
           {title}
         </h3>
-        <p className="text-gray-600 mb-4 line-clamp-3">
+        <p className="text-gray-600 mb-4 line-clamp-3 break-words">
           {description}
         </p>
         {onClick && (

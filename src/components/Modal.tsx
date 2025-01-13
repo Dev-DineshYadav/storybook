@@ -39,12 +39,14 @@ const Modal: React.FC<ModalProps> = ({ isOpen, title, content, onClose }) => {
         onClick={onClose}
       />
 
-      <div className="relative z-50 w-full max-w-lg rounded-lg bg-white shadow-xl md:w-auto">
-        <div className="flex items-center justify-between border-b border-gray-200 p-4 md:px-6 md:py-4">
-          <h2 className="text-base font-semibold text-gray-900 md:text-lg">{title}</h2>
+      <div className="relative z-50 w-full max-w-lg rounded-lg bg-white shadow-xl md:w-auto max-h-[90vh] flex flex-col">
+        <div className="flex items-center justify-between border-b border-gray-200 p-4 md:px-6 md:py-4 flex-shrink-0">
+          <h2 className="text-base font-semibold text-gray-900 md:text-lg truncate max-w-[calc(100%-2.5rem)]">
+            {title}
+          </h2>
           <button
             onClick={onClose}
-            className="rounded-lg p-1.5 text-gray-400 transition-colors hover:bg-gray-100 hover:text-gray-500"
+            className="rounded-lg p-1.5 text-gray-400 transition-colors hover:bg-gray-100 hover:text-gray-500 flex-shrink-0"
           >
             <span className="sr-only">Close</span>
             <svg
@@ -63,9 +65,11 @@ const Modal: React.FC<ModalProps> = ({ isOpen, title, content, onClose }) => {
           </button>
         </div>
         
-        <div className="p-4 md:px-6 md:py-4">
+        <div className="p-4 md:px-6 md:py-4 overflow-y-auto">
           {typeof content === 'string' ? (
-            <p className="text-sm text-gray-600 md:text-base lg:text-lg">{content}</p>
+            <p className="text-sm text-gray-600 md:text-base lg:text-lg break-words whitespace-pre-wrap">
+              {content}
+            </p>
           ) : (
             content
           )}
